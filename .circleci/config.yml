@@ -10,10 +10,11 @@ jobs:
 
     steps:
       - checkout # checkout source code to working directory
-      - run:
-          conda env create -f broker_ubuntu.yml
-          source activate mdbroker
-          pytest
+      - run: conda env create -f broker_ubu.yml
+      - run: conda activate mdbroker
+      - run: 
+          command: pytest
+          name: Test
 
 
 
