@@ -101,7 +101,16 @@ class MajorDomoBroker(object):
         self.ctx.destroy(0)
 
     def process_client(self, sender, msg):
-        """Process a request coming from a client."""
+        """
+            Process a request coming from a client.
+
+            Parameters
+            -----------
+            sender: 
+
+            msg: list
+
+        """
         assert len(msg) >= 2 # Service name + body
         service = msg.pop(0)
         # Set reply return address to client sender
@@ -180,7 +189,14 @@ class MajorDomoBroker(object):
         return worker
 
     def require_service(self, name):
-        """Locates the service (creates if necessary)."""
+        """
+            Locates the service (creates if necessary).
+
+            Parameters
+            -----------
+            name: str
+                name of the service.
+        """
         assert (name is not None)
         service = self.services.get(name)
         if (service is None):
@@ -190,15 +206,18 @@ class MajorDomoBroker(object):
         return service
 
     def bind(self, endpoint):
-        """Bind broker to endpoint, can call this multiple times.
-
-        We use a single socket for both clients and workers.
+        """
+            Bind broker to endpoint, can call this multiple times.
+            We use a single socket for both clients and workers.
         """
         self.socket.bind(endpoint)
         logging.info("I: MDP broker/0.1.1 is active at %s", endpoint)
 
     def service_internal(self, service, msg):
-        """Handle internal service according to 8/MMI specification"""
+        """
+            Handle internal service according to 8/MMI specification
+        """
+        
         returncode = b"501"
         if b"mmi.service" == service:
             # name = msg[-1]
