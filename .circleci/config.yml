@@ -15,6 +15,9 @@ jobs:
       - run: 
           command: coverage run -m pytest
           name: Test
+      - run:
+          command: coverage report -m
+          name: Coverage
 
 
 
