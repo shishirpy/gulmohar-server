@@ -12,7 +12,7 @@ jobs:
       - checkout # checkout source code to working directory
       - run:
           conda env create -f broker_ubuntu.yml
-          conda activate mdbroker
+          source activate mdbroker
           pytest
 
 
