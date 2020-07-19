@@ -8,12 +8,12 @@ jobs:
         environment:
           PIPENV_VENV_IN_PROJECT: true
 
-        steps:
-          - checkout # checkout source code to working directory
-          - run:
-              conda env create -f broker_ubuntu.yml
-              conda activate mdbroker
-              pytest
+    steps:
+      - checkout # checkout source code to working directory
+      - run:
+          conda env create -f broker_ubuntu.yml
+          conda activate mdbroker
+          pytest
 
 
 
