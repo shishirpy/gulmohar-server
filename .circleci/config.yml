@@ -13,12 +13,14 @@ jobs:
       - run: pip install -r broker_ubuntu.yml
       # - run: source activate mdbroker
       - run: 
-          command: pytest
+          command: coverage run -m pytest
           name: Test
+      - run:
+          command: coverage report -m
+          name: Coverage
 
 
 
-            
 
 # version: 2.1
 
@@ -31,10 +33,10 @@ jobs:
 #     steps:
 #       - checkout
 #       - python/load-cache
-#       - python/install-deps
+#       - pip install -r broker_ubuntu.yml
 #       - python/save-cache
 #       - run:
-#           command: ./manage.py test
+#           command: pytest
 #           name: Test
 
 # workflows:
