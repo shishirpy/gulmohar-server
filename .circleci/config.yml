@@ -1,7 +1,7 @@
-version: 2.1
+version: 2
 
 jobs:
-  build-and-test:
+  build:
     working_directory: ~/gulmohar-server
     docker:
       - image: continuumio/miniconda3
