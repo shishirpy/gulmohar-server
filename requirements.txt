@@ -5,9 +5,7 @@ coverage==5.2
 more-itertools==8.4.0
 packaging==20.4
 pluggy==0.13.1
-py @ file:///tmp/build/80754af9/py_1593446248552/work
 pyparsing==2.4.7
 pytest==5.4.3
 pyzmq==18.1.1
 six==1.15.0
-wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
