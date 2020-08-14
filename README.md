@@ -12,4 +12,4 @@ docker build -t gulmohar .
 docker run -dp 5555:5555 gulmohar
 ```
 
-The server runs at port `5555` within the container.
+The server runs at port `5555` within the container. To use the broker we need the client APIs for the worker and the client.
